@@ -15,15 +15,28 @@ def main():
 #     return False
 
 # Second Approach
+# def solve(nums):
+#     nums.sort()
+
+#     for i in range(len(nums)-1):
+#         if nums[i] == nums[i+1]:
+#             return True
+#         else:
+#             return False
+
+# Third approach using hashset
 
 def solve(nums):
-    nums.sort()
+    seen = set()
 
-    for i in range(len(nums)-1):
-        if nums[i] == nums[i+1]:
+    for num in nums:
+        if num in seen:
             return True
-        else:
-            return False
+
+        seen.add(num)
+
+    return False
+
 
 if __name__ == "__main__":
     main()
